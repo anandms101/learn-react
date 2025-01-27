@@ -9,9 +9,11 @@ import RecipeList from './qcomps/recipes';
 
 export default function Home() {
   return (
-    // <Profile />
-    // <Gallery />
-    // <List />
+    <>
+    <Profile />
+    <Gallery />
+    <List />
     <RecipeList />
+    </>
   )
 }

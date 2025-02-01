@@ -6,6 +6,7 @@ import Profile from './components/profile'
 import Gallery from './qcomps/state'
 import Form from './qcomps/stuckForm'
 import RequestTracker from './qcomps/shoppingCart'
+import Scoreboard from './qcomps/updObjectsForm'
 
 export default function Home() {
   return (
@@ -13,7 +14,8 @@ export default function Home() {
       {/* <Profile /> */}
       {/* <Gallery /> */}
       {/* <Form /> */}
-      <RequestTracker />
+      {/* <RequestTracker /> */}
+      <Scoreboard />
     </>
   )
 }

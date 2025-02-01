@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { ItemListProps } from '../../types/arrObj';
 
-let nextId = 3;
 const initialList = [
   { id: 0, title: 'Big Bellies', seen: false },
   { id: 1, title: 'Lunar Landscape', seen: false },
@@ -25,13 +24,11 @@ export default function BucketList() {
    * @param nextSeen - the value with which to update the seen property of the artwork
    */
   function handleToggleMyList(artworkId: number, nextSeen: boolean) {
-    const tmpList = myList.map(e => {
-        if (e.id === artworkId) {
-            e.seen = nextSeen
-        }
-        return e
-    });
-    setMyList(tmpList);
+    setMyList(prevList =>
+      prevList.map(item =>
+        item.id === artworkId ? { ...item, seen: nextSeen } : item
+      )
+    );
   }
 
   /**
@@ -40,13 +37,11 @@ export default function BucketList() {
    * @param nextSeen - the value with which to update the seen property of the artwork
    */
   function handleToggleYourList(artworkId: number, nextSeen: boolean) {
-    const tmpList = yourList.map(e => {
-        if (e.id === artworkId) {
-            e.seen = nextSeen
-        }
-        return e
-    });
-    setYourList(tmpList);
+    setYourList(prevList =>
+      prevList.map(item =>
+        item.id === artworkId ? { ...item, seen: nextSeen } : item
+      )
+    );
   }
 
   return (

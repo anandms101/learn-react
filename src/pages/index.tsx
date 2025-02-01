@@ -4,12 +4,14 @@
 // import styles from '@/styles/Home.module.css'
 import Profile from './components/profile'
 import Gallery from './qcomps/state'
+import Form from './qcomps/stuckForm'
 
 export default function Home() {
   return (
     <>
       {/* <Profile /> */}
-      <Gallery />
+      {/* <Gallery /> */}
+      <Form />
     </>
   )
 }

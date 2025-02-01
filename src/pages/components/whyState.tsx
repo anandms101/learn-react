@@ -1,4 +1,5 @@
 import { sculptureList } from '../../data/data';
+import { useState } from 'react';
 
 /**
  * A component that displays a gallery of sculptures.
@@ -7,10 +8,11 @@ import { sculptureList } from '../../data/data';
  */
 
 export default function Gallery() {
-  let index = 0;
+
+  const [index, setIndex] = useState(0);
 
   function handleClick() {
-    index = index + 1;
+    setIndex((index + 1) % sculptureList.length);
   }
 
   let sculpture = sculptureList[index];
